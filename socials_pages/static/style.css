@@ -1,0 +1,147 @@
+:root {
+  --bg: #f5f4f0;
+  --surface: #ffffff;
+  --text: #1c1c1e;
+  --muted: #6b6b70;
+  --border: #e2e0da;
+  --hover: #eeede8;
+  --accent: #1c1c1e;
+  --accent-text: #ffffff;
+  --radius: 14px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111113;
+    --surface: #1c1c1f;
+    --text: #f2f2f4;
+    --muted: #a3a3aa;
+    --border: #303036;
+    --hover: #26262b;
+    --accent: #f2f2f4;
+    --accent-text: #111113;
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  fill: currentColor;
+}
+
+.icon-stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.profile {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 4rem;
+  text-align: center;
+}
+
+.avatar {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-fallback {
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.bio {
+  max-width: 28rem;
+  margin: 0.5rem auto 0;
+  color: var(--muted);
+  white-space: pre-line;
+}
+
+.links {
+  display: grid;
+  gap: 0.75rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3.5rem;
+  padding: 0.85rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-weight: 550;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.link span {
+  flex: 1;
+  /* Mirror the icon width so the label sits in the optical centre. */
+  margin-right: calc(22px + 0.75rem);
+  overflow-wrap: anywhere;
+}
+
+.link:hover {
+  background: var(--hover);
+  transform: translateY(-1px);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+
+  .link:hover {
+    transform: none;
+  }
+}

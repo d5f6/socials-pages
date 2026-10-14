@@ -1,0 +1,22 @@
+# Deine Linkseite. Nach dem Speichern (Commit) ist die Änderung nach etwa
+# einer Minute online. Anleitung: README.md
+#
+# Text mit „: “ oder „ #“ in Anführungszeichen setzen, z. B. bio: "Hallo: Welt".
+
+name: ""
+bio: ""
+# Bild ins Repository hochladen und hier den Dateinamen eintragen, z. B. avatar.jpg.
+# Es wird quadratisch zugeschnitten; Kamera- und GPS-Daten werden entfernt.
+avatar: ""
+
+# Reihenfolge hier = Reihenfolge auf der Seite. Pro Link:
+#   url:      Pflicht. https://…, http://… oder eine E-Mail-Adresse
+#   label:    optional. Ohne Angabe: Name der Plattform, z. B. „Mastodon“
+#   platform: optional. Nur nötig, wenn das Icon nicht stimmt, z. B. platform: mastodon
+#   hidden:   optional. hidden: true blendet den Link aus, ohne ihn zu löschen
+links:
+  # - url: https://mastodon.social/@deinname
+  # - url: github.com/deinname
+  #   label: Mein Code
+  # - url: name@example.org
+  #   hidden: true

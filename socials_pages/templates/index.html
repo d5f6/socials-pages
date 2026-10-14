@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<title>{{ page.name or "Links" }}</title>
+{% if page.bio %}
+<meta name="description" content="{{ page.bio }}">
+{% endif %}
+<link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
+<link rel="stylesheet" href="{{ asset('style.css') }}">
+</head>
+<body>
+<main class="profile">
+  <header>
+    {% if avatar_url %}
+    <img class="avatar" src="{{ avatar_url }}" alt="" width="96" height="96">
+    {% elif initials %}
+    <div class="avatar avatar-fallback" aria-hidden="true">{{ initials }}</div>
+    {% endif %}
+    {% if page.name %}
+    <h1>{{ page.name }}</h1>
+    {% endif %}
+    {% if page.bio %}
+    <p class="bio">{{ page.bio }}</p>
+    {% endif %}
+  </header>
+  {% if page.links %}
+  <ul class="links">
+    {% for link in page.links %}
+    <li><a class="link" href="{{ link.url }}" rel="me">{{ icon(link.platform) }}<span>{{ link.label }}</span></a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</main>
+</body>
+</html>

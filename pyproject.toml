@@ -1,0 +1,19 @@
+[project]
+name = "socials-pages"
+version = "0.1.0"
+description = "Static link-in-bio page, built from socials.yml and published with GitHub Pages."
+requires-python = ">=3.12"
+# Pinned versions for CI and local development: requirements.lock, requirements-test.lock
+dependencies = [
+    "jinja2>=3.1.6",
+    "markupsafe>=3.0.4",
+    "pillow>=12.3.0",
+    "pyyaml>=6.0.3",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=9.1.1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
